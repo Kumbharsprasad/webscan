@@ -1,0 +1,12 @@
+{
+  "name": "@webscan/widget",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=dist/webscan-widget.js --format=iife --minify",
+    "dev": "esbuild src/index.ts --bundle --outfile=dist/webscan-widget.js --format=iife --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "typescript": "^5.0.0"
+  }
+}

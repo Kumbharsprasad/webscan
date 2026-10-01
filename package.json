@@ -1,0 +1,8 @@
+{
+  "name": "webscan-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
