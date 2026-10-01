@@ -1,5 +1,5 @@
 {
-  "name": "@webscan/agent",
+  "name": "@prasadkumbhar/webscan-agent",
   "version": "0.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@webscan/core": "^0.1.0",
+    "@prasadkumbhar/webscan-core": "^0.1.0",
     "cheerio": "^1.2.0"
   },
   "devDependencies": {

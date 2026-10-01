@@ -1,4 +1,4 @@
-import { Issue, ScanReport } from '@webscan/core';
+import { Issue, ScanReport } from '@prasadkumbhar/webscan-core';
 
 export interface AgentContext {
   businessType?: string;

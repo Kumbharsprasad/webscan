@@ -1,4 +1,4 @@
-import { ScanReport, scanSite } from '@webscan/core';
+import { ScanReport, scanSite } from '@prasadkumbhar/webscan-core';
 import { AgentContext, LLMProvider, SynthesizedReport } from './types';
 import { GeminiProvider } from './providers/gemini';
 import { OpenAIProvider } from './providers/openai';

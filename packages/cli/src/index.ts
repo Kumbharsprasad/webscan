@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { scanSite } from '@webscan/core';
-import { Agent } from '@webscan/agent';
+import { scanSite } from '@prasadkumbhar/webscan-core';
+import { Agent } from '@prasadkumbhar/webscan-agent';
 import { generateHtmlReport } from './html-report';
 import * as fs from 'fs';
 import * as path from 'path';

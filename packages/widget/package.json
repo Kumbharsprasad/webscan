@@ -1,5 +1,5 @@
 {
-  "name": "@webscan/widget",
+  "name": "@prasadkumbhar/webscan-widget",
   "version": "0.1.0",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --outfile=dist/webscan-widget.js --format=iife --minify",

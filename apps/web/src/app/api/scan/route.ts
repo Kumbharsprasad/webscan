@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { scanSite } from '@webscan/core';
-import { Agent } from '@webscan/agent';
+import { scanSite } from '@prasadkumbhar/webscan-core';
+import { Agent } from '@prasadkumbhar/webscan-agent';
 import { rateLimit } from '@/lib/rate-limit';
 import { addLead } from '@/lib/db';
 

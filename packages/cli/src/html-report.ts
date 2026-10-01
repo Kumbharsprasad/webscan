@@ -1,4 +1,4 @@
-import { SynthesizedReport } from '@webscan/agent';
+import { SynthesizedReport } from '@prasadkumbhar/webscan-agent';
 
 export function generateHtmlReport(report: SynthesizedReport): string {
   const categoriesHtml = report.categories.map(cat => `

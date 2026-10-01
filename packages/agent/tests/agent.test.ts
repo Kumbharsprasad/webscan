@@ -1,5 +1,5 @@
 import { Agent } from '../src/agent';
-import { ScanReport } from '@webscan/core';
+import { ScanReport } from '@prasadkumbhar/webscan-core';
 
 describe('Agent Fallback', () => {
   it('produces a complete SynthesizedReport with zero network calls when no API key is present', async () => {

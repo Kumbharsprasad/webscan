@@ -1,6 +1,6 @@
-# @webscan/agent
+# @prasadkumbhar/webscan-agent
 
-This package provides an AI-powered synthesis layer on top of `@webscan/core`'s raw `ScanReport`. It uses a Large Language Model (LLM) to rank issues by business impact, generate a non-technical summary, and intelligently perform follow-up scans on ambiguous findings.
+This package provides an AI-powered synthesis layer on top of `@prasadkumbhar/webscan-core`'s raw `ScanReport`. It uses a Large Language Model (LLM) to rank issues by business impact, generate a non-technical summary, and intelligently perform follow-up scans on ambiguous findings.
 
 ## Zero-Dependency Fallback
 
