@@ -1,69 +1,104 @@
-# Webscan
+# Webscan 🚀
 
-A lightweight, intelligent website auditing tool. Webscan can perform concurrent checks for SEO, structure/accessibility, security, broken links, performance (via Google PageSpeed Insights), and tech stack fingerprinting. It includes an AI agent layer that performs deep semantic analysis of the website and prioritizes issues by actual business impact and marketing strategy.
+A lightweight, highly intelligent website auditing tool designed for agencies, developers, and marketers. Webscan performs concurrent checks for SEO, structure, accessibility, security, broken links, performance, and tech stack fingerprinting. 
 
-## Packages
-- **`@prasadkumbhar/webscan-core`**: Framework-agnostic scanning engine.
-- **`@prasadkumbhar/webscan-agent`**: LLM reasoning layer for intelligent strategic summaries.
-- **`@prasadkumbhar/webscan-cli`**: Terminal tool for fast audits and batch processing.
-- **`@prasadkumbhar/webscan-widget`**: Embeddable script for client sites (lead generation).
-- **`apps/web`**: Next.js hosted version of the auditing tool.
+Unlike traditional technical scanners, Webscan features an **AI Agent Layer** that performs deep semantic analysis of the website's text to grade its positioning, differentiation, target audience messaging, and more—outputting a customer-ready strategic report.
 
-## Using the CLI
+---
 
-You can easily run Webscan from your terminal. If the package is published to NPM, you can run it instantly using `npx` without needing to clone this repository:
+## 📦 Features
 
+- **Blazing Fast**: Runs multiple web checks concurrently.
+- **AI-Powered Insights**: Uses Groq, OpenAI, or Gemini to understand the actual business context of a website.
+- **Graceful Degradation**: If AI providers are down or no API keys are provided, it falls back to a deterministic, offline rule-based grading system.
+- **Multiple Output Formats**: View results directly in the terminal, or export a stunning, standalone HTML report.
+- **Embeddable Widget**: Drop a small script on your agency's site to let prospective clients scan their own sites (lead generation).
+
+---
+
+## 🚀 Using the CLI
+
+You can easily run Webscan from your terminal anywhere on your computer.
+
+### Option 1: Run instantly with `npx` (No install required)
+
+To run a quick audit and print the results to your terminal:
 \`\`\`bash
-# Run a quick terminal scan
 npx @prasadkumbhar/webscan-cli scan https://example.com
+\`\`\`
 
-# Generate a detailed HTML report
+To generate a detailed, beautifully styled HTML report file:
+\`\`\`bash
 npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
 \`\`\`
 
-Alternatively, you can install it globally to use the `webscan` command anywhere:
+### Option 2: Install globally
+
+If you plan to use it often, you can install the CLI globally on your machine:
 \`\`\`bash
 npm install -g @prasadkumbhar/webscan-cli
 
+# Now you can use the 'webscan' command anywhere!
 webscan scan https://example.com --out report.html
 \`\`\`
 
-### Supplying API Keys (Environment Variables)
+---
 
-Webscan's AI evaluation engine supports multiple LLM providers (Groq, OpenAI, and Gemini). It uses an **LLM Gateway** that automatically falls back if a provider is unavailable.
+## 🔑 Supplying API Keys for AI Analysis
 
-You can supply these keys by passing them directly in your terminal command:
+By default, Webscan runs offline. To unlock the deep strategic AI insights, you must supply an API key. Webscan uses a fault-tolerant **LLM Gateway** that tries providers in the following order: `Groq -> OpenAI -> Gemini`.
 
-\`\`\`bash
-# Using Groq (Recommended - Fast inference)
-GROQ_API_KEY=your_key npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
+Here is how you pass the key to the command based on your terminal:
 
-# Using OpenAI
-OPENAI_API_KEY=your_key npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
-
-# Using Gemini
-GEMINI_API_KEY=your_key npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
+### Command Prompt (`cmd.exe`) on Windows:
+Use the `set` command followed by `&&`.
+\`\`\`cmd
+set GROQ_API_KEY=your_key_here && npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
 \`\`\`
 
-Webscan also uses Google PageSpeed Insights for performance checks. You can include `PSI_API_KEY=your_key` in the same way. If no LLM API key is provided (or if all APIs fail), the CLI will gracefully drop down to a deterministic, offline summary mode.
+### PowerShell on Windows:
+Use `$env:` and wrap your key in quotation marks.
+\`\`\`powershell
+$env:GROQ_API_KEY="your_key_here"; npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
+\`\`\`
 
-## Local Development
+### Mac / Linux / Git Bash:
+Pass the environment variable directly before the command.
+\`\`\`bash
+GROQ_API_KEY=your_key_here npx @prasadkumbhar/webscan-cli scan https://example.com --out report.html
+\`\`\`
 
-To run this monorepo locally from a clean clone:
+*(Supported environment variables: `GROQ_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, and `PSI_API_KEY` for Google PageSpeed Insights).*
+
+---
+
+## 🏗️ Monorepo Packages
+
+If you want to integrate Webscan into your own Node.js project, the tool is broken down into modular packages:
+
+- **`@prasadkumbhar/webscan-core`**: The raw, framework-agnostic scanning engine. Fetches HTML, checks headers, finds broken links.
+- **`@prasadkumbhar/webscan-agent`**: The LLM reasoning layer. Takes the raw output from `core` and translates it into strategic marketing scores.
+- **`@prasadkumbhar/webscan-cli`**: The terminal wrapper detailed above.
+- **`@prasadkumbhar/webscan-widget`**: An embeddable `<script>` you can put on client sites to trigger API scans.
+
+## 💻 Local Development
+
+Want to contribute or run the web interface?
 
 \`\`\`bash
-# Install dependencies
+# 1. Clone the repository and install dependencies
+git clone https://github.com/yourusername/webscan.git
+cd webscan
 npm install
 
-# Build all packages
+# 2. Build the workspace
 npm run build -ws
 
-# Run tests
-npm run test -ws
-
-# Run the CLI locally
-npx webscan scan https://example.com
+# 3. Start the Next.js Web Interface
+cd apps/web
+npm run dev
+# Open http://localhost:3000
 \`\`\`
 
-## License
+## 📄 License
 MIT
